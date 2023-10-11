@@ -1,0 +1,35 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        //read source data
+        System.out.println("Hi and welcome in calculator average score! to get result, enter -1");
+        ArrayList<Integer> ozenki = new ArrayList<>();
+        int grade;
+
+        //processing
+        while (true) {  //создаём колллекцию из оценок
+            grade = new Scanner(System.in).nextInt();
+            if (grade == -1) { //завершить создание коллекции
+                break;
+            }
+                ozenki.add(grade);
+
+        }
+
+
+        int summ = 0;
+        for (Integer num : ozenki) {  //вычисляем сумму всех оценок
+            summ += num;
+        }
+        int totalozenok = ozenki.size();
+
+        double result = (double) summ / totalozenok;
+
+        //display result
+        System.out.println("your average score: " + result);
+
+    }
+}
